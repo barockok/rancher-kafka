@@ -34,7 +34,7 @@ EOF
 
 cat << EOF > ${SERVICE_VOLUME}/confd/etc/templates/server.properties.tmpl
 ############################# Server Basics #############################
-broker.id={{getv "/self/container/service_index"}}
+broker.id=${KAFKA_BROKER_PREFIX}{{getv "/self/container/service_index"}}
 ############################# Socket Server Settings #############################
 listeners=${KAFKA_LISTENER}
 advertised.listeners=${KAFKA_ADVERTISE_LISTENER}
