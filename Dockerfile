@@ -12,8 +12,5 @@ ENV SERVICE_NAME=kafka \
 
 # Add files
 ADD root /
-RUN cd ${SERVICE_VOLUME} && \
-    chmod 755 ${SERVICE_VOLUME}/confd/bin/*.sh && \
-    tar czvf ${SERVICE_ARCHIVE} * && \ 
-    rm -rf ${SERVICE_VOLUME}/* 
+RUN cd ${SERVICE_VOLUME} && chmod 755 ${SERVICE_VOLUME}/confd/bin/*.sh && tar czvf ${SERVICE_ARCHIVE} * && rm -rf ${SERVICE_VOLUME}/* 
 
